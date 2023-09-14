@@ -17,7 +17,7 @@ jobs:
       - name: Setup LaTeX
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-xetex  # Ou texlive-latex-base se preferir pdflatex
+          sudo apt-get install -y texlive-binaries pdflatex  # Ou texlive-latex-base se preferir pdflatex
 
       - name: Build PDF
         run: |
@@ -30,8 +30,8 @@ jobs:
           name: pdf
           path: main.pdf
 
-  release-project:
-    name: Release Project
+  release-curriculum:
+    name: Release Curriculum
     runs-on: ubuntu-latest
     needs: build-project
 
