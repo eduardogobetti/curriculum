@@ -1,6 +1,23 @@
-\documentclass[11pt]{article} % Escolha a classe de documento e o tamanho da fonte
-\usepackage[utf8]{inputenc} % Defina a codificação
+\documentclass[11pt,a4paper]{moderncv}              % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\moderncvstyle{banking}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+\nopagenumbers{}                                    % uncomment to suppress automatic page numbering for CVs longer than one page
+\usepackage[utf8]{inputenc}                         % if you are not using xelatex ou lualatex, replace by the encoding you are using
+\usepackage[scale=0.75]{geometry}                   % adjust the page margins    
+\usepackage{import}
 
+%----------------------------------------------------------------------------------
+% personal data
+%----------------------------------------------------------------------------------
+\name{Eduardo}{Gobetti}
+\address{Toledo, Brazil}{}{}                        % optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+\phone[mobile]{+55 45 99121 0900}                   % optional, remove / comment the line if not wanted
+\email{eduardo.gobetti@gmail.com}                   % optional, remove / comment the line if not wanted
+% \extrainfo{additional information}                % optional, remove / comment the line if not wanted
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
 \begin{document}
-Documento de teste.
+\makecvtitle
 \end{document}
