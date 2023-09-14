@@ -29,5 +29,6 @@ jobs:
       with:
         files: |
           main.pdf
+        tag_name: v1.0.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
