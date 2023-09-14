@@ -40,17 +40,6 @@ jobs:
           name: PDF
           path: pdf
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        with:
-          tag_name: ${{ github.run_number }}
-          release_name: ${{ github.run_number }}
-          files: |
-            pdf/main.pdf        
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
