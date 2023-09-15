@@ -1,10 +1,5 @@
 \documentclass[11pt,a4paper]{moderncv}              % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
-\moderncvstyle{banking}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
-\moderncvcolor{blue}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
-\nopagenumbers{}                                    % uncomment to suppress automatic page numbering for CVs longer than one page
-\usepackage[utf8]{inputenc}                         % if you are not using xelatex ou lualatex, replace by the encoding you are using
-\usepackage[scale=0.75]{geometry}                   % adjust the page margins    
-\usepackage{import}
+\usepackage{main}
 
 %----------------------------------------------------------------------------------
 % personal data
@@ -15,137 +10,22 @@
 \email{eduardo.gobetti@gmail.com}                   % optional, remove / comment the line if not wanted
 % \extrainfo{additional information}                % optional, remove / comment the line if not wanted
 
-%----------------------------------------------------------------------------------
-%            content
-%----------------------------------------------------------------------------------
+
 \begin{document}
 \makecvtitle
 
-\small
-{
-    I graduated in TADS (Technology and Analysis in System Development) from Univel in 2008 and since then I have been working in the area of equipment, 
-    server, and network maintenance, as well as user support. This role gave me access to Delphi system development. 
-    In 2008, I took on the role of programmer and worked on ERP system development for poultry and swine refrigerators, as well as for the agribusiness area.\\
-
-    From the beginning of my career, I have a affinity for the Linux operating system, which allowed me to learn more about datacenters. 
-    In 2016, I had the opportunity to take on the DevOps role, where I led the implementation and automation of the pipeline, 
-    as well as developed tools and scripts that are still used by the company. Since August 2019, I also lead the infrastructure team at Ecocentauro, 
-    responsible for the physical restructuring of the new administrative headquarters, datacenter maintenance, internal network, and cloud.\\
-
-    During the pandemic, I was responsible for the structure that allowed for the continuation of work from home for all employees, 
-    without compromising the work scheme. Over the course of nearly 20 years in the profession, I have had the opportunity to work with various languages and technologies, 
-    including Python, Golang, Dart, Containers, Bacula, VMWare ESXI, GitLab, AWS, and Kong.\\
-
-    I enjoy the challenge my area provides, allowing me to improve the team's productive process, solve complex problems, 
-    and anticipate possible situations that may affect the smooth operation of the company's work.
-}
-
+\input{sections/profile.tex}
 \vspace{6pt}
-\section{Professional experience}
 
+\input{sections/experience.tex}
 \vspace{6pt}
-\begin{itemize}
 
-\item
-{\cventry{2021--2023}
-{}
-{SRE | Cloud and DevOps Engineer}
-{Americanas}
-{}
-{
-I worked on orchestration of containers with ECS (Fargate or EC2) and Kubernetes EKS (with EC2), I created scalable and resilient environments.
-My expertise spans major AWS services while managing ElasticSearch and Apache Kafka clusters for optimization and availability.    
-I also have experience in advanced monitoring, ensuring essential metrics and high quality of services.}
-}
-
+\input{sections/education.tex}
 \vspace{6pt}
-\item
-{\cventry{2019--2021}
-{}
-{Tech lead}
-{Ecocentauro}
-{}
-{
-I led a highly skilled infrastructure and DevOps/SysAdmin team in a cloud-based environment. 
-My role involved guiding and collaborating with the team to execute complex projects effectively and maintain critical systems optimally. 
-I managed infrastructure building, scalability, and security, ensuring efficient operations in a constantly evolving environment.}
-}
 
+\input{sections/language.tex}
 \vspace{6pt}
-\item
-{\cventry{2016--2019}
-{}
-{Devops}
-{Ecocentauro}
-{}
-{Developed and implemented automated processes, creating pipelines for a variety of applications in languages.}
-}
 
-\newpage
+\input{sections/skill.tex}
 
-\vspace{6pt}
-\item
-{\cventry{2012--2016}
-{}
-{Delphi developer}
-{Ecocentauro}
-{}
-{As a FullStack Developer, I played a key role in the development of an ERP system, directly contributing to its restructuring and architectural improvement.}
-}
-
-\vspace{6pt}
-\item
-{\cventry{2008--2012}
-{}
-{Delphi developer}
-{Diplomata S/A Industrial}
-{}
-{Conducted analyzes and developed solutions for corrections and improvements in the ERP system}
-}
-
-\vspace{6pt}
-\item
-{\cventry{2005--2008}
-{}
-{Helpdesk}
-{Diplomata S/A Industrial}
-{}
-{Hardware Support. Task automation script. Server monitoring and management}
-}
-
-\end{itemize}
-
-\vspace{6pt}
-\section{Education}
-\vspace{5pt}
-
-\subsection{Academic Qualifications}
-
-\vspace{5pt}
-
-\begin{itemize}
-\item{\cventry{2005--2008}
-{Technology in systems analysis and development}
-{Univel}
-{Cascavel}
-{Bachelor's Degree}
-{}
-}
-\end{itemize}
-
-\vspace{6pt}
-\section{Languages}
-\cvitemwithcomment{English}{Advanced}{}
-\cvitemwithcomment{Italian}{Basic}{}
-
-
-\section{skils}
-\cvlistdoubleitem{Gitlab}{Python}
-\cvlistdoubleitem{Jenkins}{PostgreSQL}
-\cvlistdoubleitem{Prometheus}{Delphi}
-\cvlistdoubleitem{Docker}{IBM Db2}
-\cvlistdoubleitem{Kubernetes}{Go}
-\cvlistdoubleitem{Datadog}{Jira}
-\cvlistdoubleitem{Linux}{Aws}
-\cvlistdoubleitem{Apache Kafka}{Elastic Stack (ELK)}
 \end{document}
