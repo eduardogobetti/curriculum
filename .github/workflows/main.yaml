@@ -3,8 +3,8 @@ name: Compile Latex and Release PDF
 
 on:
   push:
-    tags:
-      - '*.*.*'
+    branches:
+      - main
     
 jobs:
   build_latex:
