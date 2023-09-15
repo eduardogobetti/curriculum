@@ -16,10 +16,21 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
-      - name: Compile LaTeX document
+
+      - name: Compile LaTeX document (EN)
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: main.tex
+          root_file: eduardo_gobetti_en.tex
+        env:
+          BUILD_NAME: en
+
+      - name: Compile LaTeX document  (PT)
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: eduardo_gobetti_pt.tex
+        env:
+          BUILD_NAME: pt
+
 
       - name: Create Release
         id: create_release
@@ -33,28 +44,40 @@ jobs:
           prerelease: false
 
 
-#       - name: Create Release
-#         id: create_release
-#         uses: actions/create-release@v1
-#         with:
-#           tag_name: ${{ github.run_number }}
-#           release_name: ${{ github.run_number }}
-#           files: |
-#             main.pdf        
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
-      - name: Upload Release Asset
-        id: upload-release-asset 
+      - name: Upload Release Asset (EN)
+        id: upload-release-asset-en
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} 
-          asset_path: ./main.pdf
-          asset_name: main.pdf
+          asset_path: ./eduardo_gobetti_en.pdf
+          asset_name: eduardo_gobetti_en.pdf
           asset_content_type: pdf
+
+      - name: Upload Release Asset (PT)
+        id: upload-release-asset-pt
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} 
+          asset_path: ./eduardo_gobetti_pt.pdf
+          asset_name: eduardo_gobetti_pt.pdf
+          asset_content_type: pdf
+
+
+
+      # - name: Upload Release Asset
+      #   id: upload-release-asset 
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     upload_url: ${{ steps.create_release.outputs.upload_url }} 
+      #     asset_path: ./main.pdf
+      #     asset_name: main.pdf
+      #     asset_content_type: pdf
 # name: Build and Release PDF
 
 # on:
